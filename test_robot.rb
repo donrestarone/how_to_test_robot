@@ -53,21 +53,26 @@ class TestRobot < MiniTest::Test
   end
 
   def test_prioritize_tasks_with_empty_todo_list_returns_negative_one
-    skip
+    
     # arrange
-
+    standard_issue = Robot.new
     # act
-
+    expected_result = -1
+    actual_result = standard_issue.prioritize_tasks
     # assert
+    assert_equal(expected_result, actual_result)
   end
 
   def test_prioritize_tasks_with_todos_returns_max_todo_value
-    skip
+    
     # arrange
-
+    standard_issue = Robot.new
+    standard_issue.todos=(['infiltrate the resistance', 'hurt children'])
     # act
-
+    expected_result = 'infiltrate the resistance'
+    actual_result = standard_issue.prioritize_tasks
     # assert
+    assert_equal(expected_result, actual_result)
   end
 
   def test_workday_on_day_off_returns_false
